@@ -6,7 +6,10 @@ class Filters extends React.Component {
       <div className="ui form">
         <h3>Animal type</h3>
         <div className="field">
-          <select name="type" id="type">
+          {/* onChangeType will pass the event to the parent function
+             this event will hold the updated option value
+            */}
+          <select name="type" id="type" onChange={this.props.onChangeType}>
             <option value="all">All</option>
             <option value="cat">Cats</option>
             <option value="dog">Dogs</option>
@@ -15,7 +18,8 @@ class Filters extends React.Component {
         </div>
 
         <div className="field">
-          <button className="ui secondary button">Find pets</button>
+        {/* The value that is selected in the field above is passed to our parent to change our filter */}
+          <button className="ui secondary button" onClick={this.props.onFindPetsClick}>Find pets</button>
         </div>
       </div>
     )
